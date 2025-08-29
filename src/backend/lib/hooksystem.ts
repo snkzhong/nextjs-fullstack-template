@@ -1,9 +1,10 @@
+import { HookHandler } from '~/backend/types';
 
 // Hook 系统
 export class HookSystem {
-  private hooks: Record<string, ((...args: any[]) => any)[]> = {};
+  private hooks: Record<string, (HookHandler)[]> = {};
 
-  register(hookName: string, callback: (...args: any[]) => any) {
+  register(hookName: string, callback: HookHandler) {
     if (!this.hooks[hookName]) {
       this.hooks[hookName] = [];
     }

@@ -16,7 +16,15 @@ build({
     'fs',
     'path',
     'events',
-  ], // 排除 express 包
+    'pino',
+    'dayjs',
+    'fastify',
+    'prsima',
+    '@prisma/client',
+    '@fastify/swagger',
+    '@fastify/swagger-ui',
+    'knex',
+  ],
   define: {
     'process.env.NODE_ENV': '"production"', // 定义环境变量
   },

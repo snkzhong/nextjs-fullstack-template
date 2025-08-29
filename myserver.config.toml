@@ -1,13 +1,21 @@
-merge = "myserver"
+serverType = "fastify"
 
-[[bin]]
-name = "deno"
-path = "cli/main.rs"
+[redis]
+host = "127.0.0.1"
+port = 6379
+password = "redis"
+db = 0
 
-[[bin]]
-name = "deno_core"
-path = "src/foo.rs"
+#连接池
+min = 100 # 保持一定数量的常驻连接
+max = 1024 # 根据应用负载调整
+idleTimeoutMillis = 60000 # 1分钟空闲超时
+acquireTimeoutMillis = 2000 # 2秒获取超时
 
-[[nib]]
-name = "node"
-path = "not_found"
+# 超时设置
+commandTimeout = 3000
+maxRetriesPerRequest = 3
+
+# 其他配置
+enableOfflineQueue = true # 是否允许离线命令队列
+keepAlive = 60000 # TCP 保持连接

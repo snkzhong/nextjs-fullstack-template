@@ -1,6 +1,6 @@
 {
   "watch": ["myserver.ts", "src/**"],
-  "exec": "tsx myserver.ts",
+  "exec": "tsx ./scripts/autoloadindex.ts && tsx myserver.ts",
   "ext": "ts js",
   "env": {
     "NODE_ENV": "development"

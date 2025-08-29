@@ -3,7 +3,7 @@ import { createCallerFactory, publicProcedure, router } from "~/server/trpc";
 import { readdirSync, existsSync } from "fs"
 import path from "path";
 
-const routerPath = "routes/trpc";
+const routerPath = "routes";
 
 const routerRoot = path.join(path.dirname(new URL(import.meta.url).pathname), routerPath);
 if (!existsSync(routerRoot)) {

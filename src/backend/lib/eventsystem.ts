@@ -1,4 +1,5 @@
 import { EventEmitter } from 'events';
+import { EventHandler } from '~/backend/types';
 
 // 事件系统
 export class EventSystem {
@@ -8,12 +9,12 @@ export class EventSystem {
     this.emitter = new EventEmitter();
   }
 
-  on(event: string, listener: (...args: any[]) => void) {
+  on(event: string, listener: EventHandler) {
     this.emitter.on(event, listener);
     return this;
   }
 
-  off(event: string, listener: (...args: any[]) => void) {
+  off(event: string, listener: EventHandler) {
     this.emitter.off(event, listener);
     return this;
   }
