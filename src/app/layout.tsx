@@ -1,3 +1,5 @@
+import {NextIntlClientProvider} from 'next-intl';
+
 import './globals.css';
 
 export const metadata = {
@@ -12,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   )
 }

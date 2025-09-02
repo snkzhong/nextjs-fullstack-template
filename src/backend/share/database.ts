@@ -103,26 +103,26 @@ async function getEnhancedMetrics() {
   }
 }
 
-// 格式化输出示例
-setInterval(async () => {
-  const stats = await getEnhancedMetrics()
+// // 格式化输出示例
+// setInterval(async () => {
+//   const stats = await getEnhancedMetrics()
   
-  console.log(`
-=== 数据库监控 (${new Date().toLocaleTimeString()}) ===
-连接池:
-  活动: ${stats.connection_pool.active}
-  空闲: ${stats.connection_pool.idle}
-  等待: ${stats.connection_pool.waiting}
-  当前开放: ${stats.connection_pool.open}
-  历史打开: ${stats.connection_pool.lifetimeOpened}
-  历史关闭: ${stats.connection_pool.lifetimeClosed}
+//   console.log(`
+// === 数据库监控 (${new Date().toLocaleTimeString()}) ===
+// 连接池:
+//   活动: ${stats.connection_pool.active}
+//   空闲: ${stats.connection_pool.idle}
+//   等待: ${stats.connection_pool.waiting}
+//   当前开放: ${stats.connection_pool.open}
+//   历史打开: ${stats.connection_pool.lifetimeOpened}
+//   历史关闭: ${stats.connection_pool.lifetimeClosed}
 
-查询统计:
-  QPS: ${stats.queries.qps}/s
-  总次数: ${stats.queries.total}
-  活跃查询: ${stats.queries.active}
-  `)
-}, 5000);
+// 查询统计:
+//   QPS: ${stats.queries.qps}/s
+//   总次数: ${stats.queries.total}
+//   活跃查询: ${stats.queries.active}
+//   `)
+// }, 5000);
 
 
 prismaInst.$on('query', (e) => {

@@ -1,0 +1,10 @@
+{
+  "welcome": "欢迎来到我们的网站！",
+  "about": "关于我们",
+  "description": "这是一个在 Next.js 中使用 next-intl 的演示。",
+  "switchTo": "切换到 {language}",
+  "currentLocale": "当前语言: {locale}",
+  "HomePage": {
+    "title": "你好世界!"
+  }
+}
